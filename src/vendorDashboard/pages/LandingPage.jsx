@@ -22,13 +22,16 @@ const LandingPage = () => {
      const loginToken=localStorage.getItem("loginToken");
      if(loginToken){
           setShowLogOut(true)
+          setShowWelcome(true)
      }
  },[])
 
  useEffect(()=>{
       const firmName=localStorage.getItem("firmName");
-      if(firmName){
+      const firmId=localStorage.getItem("firmId");
+      if(firmName||firmId){
         setShowFirmTitle(false)
+        setShowWelcome(true)
       }
  },[])
 
